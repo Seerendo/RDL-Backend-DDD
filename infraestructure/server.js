@@ -1,8 +1,9 @@
 const express = require('express');
 
 class Server {
-    constructor(){
+    constructor({router}){
         this._express = express();
+        this._express.use(router);
     }
 
     start() {

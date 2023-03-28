@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "1234",
-    "database": "rdl",
-    "host": "localhost",
+    "password": "Roannamo123_",
+    "database": "rdl-test",
+    "host": "34.174.143.147",
     "dialect": "mysql"
   },
   "test": {

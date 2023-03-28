@@ -1,9 +1,10 @@
 const { Router } = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+/* const ParamRoutes = require('./param.routes'); */
 
 module.exports = function ({
-    ParamRoutes,
+    ParamRouter,
 }) {
     const apiRouter = Router();
     const router = Router();
@@ -13,7 +14,7 @@ module.exports = function ({
         .use(bodyParser.json())
         .use(bodyParser.urlencoded({extended: true, limit: '50mb'}));
 
-    apiRouter.use('/param', ParamRoutes);
+    apiRouter.use('/param', ParamRouter);
 
     router.use('/api', apiRouter);
     return router;
