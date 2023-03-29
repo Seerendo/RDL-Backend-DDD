@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   process.init({
+    processId: {
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     description: DataTypes.STRING,
     active: DataTypes.BOOLEAN
   }, {

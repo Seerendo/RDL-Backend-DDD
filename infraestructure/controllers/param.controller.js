@@ -11,7 +11,7 @@ class ParamController {
         params = params.map(param => mapper(ParamData, param));
         return res.send(
             {
-                data: params
+                payload: params
             }
         )
     }

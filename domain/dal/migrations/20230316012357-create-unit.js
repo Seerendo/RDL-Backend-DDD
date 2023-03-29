@@ -14,6 +14,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       active: {
+        defaultValue: true,
         type: Sequelize.BOOLEAN
       },
     });

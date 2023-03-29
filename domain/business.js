@@ -8,6 +8,7 @@ class Business {
 
     async getAll() {
         let enities = await this._repository.getAll();
+        const a = enities;
         let mapEntities = mapper(this.entity, enities);
         return mapEntities;
     }

@@ -1,16 +1,16 @@
 {
   "development": {
     "username": "root",
-    "password": "Roannamo123_",
-    "database": "rdl-test",
-    "host": "34.174.143.147",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "password": "Roannamo123_",
+    "database": "rdl-test",
+    "host": "34.174.143.147",
     "dialect": "mysql"
   },
   "production": {
