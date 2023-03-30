@@ -5,13 +5,11 @@ class ParamRepository {
         this._db = db;
     }
 
-    //Listar todo
-    getAll() {
+    getAllParams() {
         return this._db['param'].findAll();
     }
 
-    //Buscar por ID
-    getItemId(id) {
+    getParamById(id) {
         return this._db['param'].findOne({
             where: {
                 paramId: id
@@ -19,23 +17,59 @@ class ParamRepository {
         });
     }
 
-    //Buscar por nombre
-    getItemsName(query) {
+    getParamByDescription(query) {
         return this._db['param'].findAll({
             where: {
                 description: {
                     [Op.like]: '%'+query+'%'
-                }
+                },
+            },
+        });
+    }
+
+    getParamByField(query) {
+        return this._db['param'].findAll({
+            where: {
+                field: {
+                    [Op.like]: '%'+query+'%'
+                },
+            },
+        });
+    }
+
+    getParamByFieldAndDescription(description, field) {
+        return this._db['param'].findAll({
+            where: {
+                description: {
+                    [Op.like]: '%'+description+'%'
+                },
+                [Op.and]: [{
+                    [Op.like]: '%'+field+'%'
+                }],
+            },
+        });
+    }
+
+    getParamByActivated(query) {
+        return this._db['param'].findAll({
+            where: {
+                active: query
             }
         });
     }
 
-    //Crear Parámetro
+    getParamByCuali(query) {
+        return this._db['param'].findAll({
+            where: {
+                cuali: query
+            }
+        });
+    }
+
     createParam(query) {
         return this._db['param'].create(query);
     }
 
-    //Acutalizar Parámetro
     updateParam(query, id) {
         return this._db['param'].update(query, {
             where: {
@@ -43,16 +77,6 @@ class ParamRepository {
             }
         });
     }
-
-    //Eliminar parámetro por id
-    deleteParam(id) {
-        return this._db['param'].destroy({
-            where: {
-                paramId: id
-            }
-        });
-    }
-
 }
 
 module.exports = ParamRepository;
