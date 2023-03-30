@@ -1,8 +1,16 @@
-const Service = require('./service');
-
-class ParamService extends Service {
+class ParamService {
     constructor({ ParamBusiness }) {
-        super(ParamBusiness);
+        this._business = ParamBusiness;
+    }
+
+    async getAll() {
+        const params = await this._business.getAll();
+        return params;
+    }
+
+    async getItemId(id) {
+        const param = await this._business.getItemId(id);
+        return param;
     }
 }
 

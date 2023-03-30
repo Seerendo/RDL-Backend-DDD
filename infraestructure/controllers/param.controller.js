@@ -13,7 +13,18 @@ class ParamController {
             {
                 payload: params
             }
-        )
+        );
+    }
+
+    async getParamById(req, res) {
+        const {body} = req;
+        let param = await this._paramService.getItemId(body.paramId);
+        param = mapper(ParamData, param);
+        return res.send(
+            {
+                payload: param
+            }
+        );
     }
 }
 
