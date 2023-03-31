@@ -21,7 +21,7 @@ class ParamController {
 
     async getParamByDescription(req, res) {
         const {body} = req;
-        let param = await this._paramService.getParamById(body.description);
+        let param = await this._paramService.getParamByDescription(body.description);
         param = mapper(ParamData, param);
         return res.status(200).send({ payload: param});
     }
@@ -57,13 +57,6 @@ class ParamController {
     async createParam(req, res) {
         const {body} = req;
         let param = await this._paramService.createParam(body);
-        param = mapper(ParamData, param);
-        return res.status(201).send({ payload: param});
-    }
-
-    async createParam(req, res) {
-        const {body} = req;
-        let param = await this._paramService.getParamByCuali(body);
         param = mapper(ParamData, param);
         return res.status(201).send({ payload: param});
     }

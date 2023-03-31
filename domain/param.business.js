@@ -20,7 +20,7 @@ class ParamBusiness {
     }
 
     async getParamByDescription(query) {
-        let param = await this._repository.getParamById(query);
+        let param = await this._repository.getParamByDescription(query);
         let mapEntities = mapper(this.entity, param);
         return mapEntities;
     }

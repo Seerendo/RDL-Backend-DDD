@@ -5,7 +5,7 @@ module.exports = {
     await queryInterface.createTable('params', {
       id: {
         allowNull: false,
-        autoIncrement: false,
+        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
         field: 'paramId'
